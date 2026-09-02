@@ -87,6 +87,47 @@ footer b{color:var(--primary)}
 .stat .l{color:var(--muted);font-size:.88rem;margin-top:4px}
 @media(max-width:600px){.cols{grid-template-columns:1fr}}
 </style>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var navLinks=document.querySelectorAll('nav a');
+  var sections=[];
+  navLinks.forEach(function(a){
+    var id=a.getAttribute('href');
+    if(id&&id.startsWith('#')){
+      var el=document.querySelector(id);
+      if(el)sections.push({el:el,link:a});
+    }
+  });
+  navLinks.forEach(function(a){
+    a.addEventListener('click',function(e){
+      var href=a.getAttribute('href');
+      if(href&&href.startsWith('#')){
+        e.preventDefault();
+        var target=document.querySelector(href);
+        if(target){
+          target.scrollIntoView({behavior:'smooth',block:'start'});
+          history.pushState(null,'',href);
+          navLinks.forEach(function(l){l.classList.remove('on')});
+          a.classList.add('on');
+        }
+      }
+    });
+  });
+  function updateActive(){
+    var scrollY=window.scrollY+120;
+    var current=null;
+    sections.forEach(function(s){
+      if(s.el.offsetTop<=scrollY)current=s;
+    });
+    if(current){
+      navLinks.forEach(function(l){l.classList.remove('on')});
+      current.link.classList.add('on');
+    }
+  }
+  window.addEventListener('scroll',updateActive);
+  updateActive();
+});
+</script>
 </head>
 <body>
 
