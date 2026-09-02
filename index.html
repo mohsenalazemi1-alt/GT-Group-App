@@ -34,6 +34,17 @@ h1 span{color:var(--primary)}
 .hero-btn{display:inline-block;margin-top:26px;background:linear-gradient(135deg,var(--primary),var(--primaryDark));color:#0B1220;font-weight:900;font-size:1.15rem;padding:15px 44px;border-radius:14px;box-shadow:0 12px 34px rgba(247,147,26,.35);position:relative;z-index:1}
 .hero-btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
 .hero-meta{position:relative;z-index:1;color:var(--muted);font-size:.88rem;margin-top:14px}
+.links-row{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:16px}
+.link-btn{display:inline-flex;align-items:center;gap:6px;background:rgba(14,165,233,.14);border:1px solid rgba(14,165,233,.55);color:var(--secondary);font-weight:800;font-size:.95rem;padding:11px 22px;border-radius:12px}
+.link-btn:hover{background:rgba(14,165,233,.25)}
+.plans{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:8px}
+.plan{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;text-align:center}
+.plan.dark{background:var(--surfaceAlt);border-color:rgba(247,147,26,.45)}
+.plan h3{font-size:1.2rem;margin-bottom:8px}
+.plan .price{font-size:1.6rem;font-weight:900;color:var(--primary);margin:6px 0}
+.plan ul{list-style:none;text-align:right;margin-top:12px;display:grid;gap:8px}
+.plan li{color:#B9C6DB;font-size:.92rem}
+.plan li::before{content:"✓ ";color:var(--primary);font-weight:900}
 nav{background:rgba(18,26,43,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50;display:flex;justify-content:center;flex-wrap:wrap;gap:4px;padding:8px 12px}
 nav a{color:#c3cfe2;font-weight:700;font-size:.95rem;padding:9px 18px;border-radius:10px}
 nav a:hover{color:var(--text);background:var(--surfaceAlt)}
@@ -80,10 +91,13 @@ footer b{color:var(--primary)}
 <body>
 
 <header>
-  <div class="badge">القناة الرسمية — GT Group</div>
+  <div class="badge">🏆 القناة الرسمية — GT Group</div>
   <h1>تطبيق <span>GT Group</span></h1>
   <p class="sub">قناتك الموثوقة للتوصيات والتقارير الأسبوعية والشهرية، ومكتبة القناة كاملة في جيبك — مباشرةً من السحابة.</p>
   <a class="hero-btn" href="https://github.com/mohsenalazemi1-alt/GT-Group-App/releases/download/v1.1.0/app-release.apk">⬇ تحميل التطبيق</a>
+  <div class="links-row">
+    <a class="link-btn tg" href="https://t.me/gt_group" target="_blank" rel="noopener">✈️ تابعنا على تيليجرام</a>
+  </div>
   <div class="hero-meta">v1.1.0 · أندرويد · رابط مباشر دائم</div>
 </header>
 
@@ -91,6 +105,7 @@ footer b{color:var(--primary)}
   <a href="#home" class="on">الرئيسية</a>
   <a href="#about">من نحن</a>
   <a href="#download">تحميل التطبيق</a>
+  <a href="#subscribe">الاشتراك</a>
   <a href="#library">مكتبة القناة</a>
 </nav>
 
@@ -130,6 +145,28 @@ footer b{color:var(--primary)}
     </div>
   </section>
 
+  <section id="subscribe" style="margin-top:38px">
+    <h2>الخطة <span class="g">والاشتراك</span></h2>
+    <p class="lead">خطط مرنة ودعم متواصل من الفريق، كل التفاصيل داخل التطبيق بعد التحميل.</p>
+    <div class="plans">
+      <div class="plan dark">
+        <h3>💎 الباقة المميزة</h3>
+        <div class="price">الأكثر شيوعاً</div>
+        <ul>
+          <li>توصيات مباشرة عبر القناة والبوت</li>
+          <li>التقارير الأسبوعية والشهرية كاملة</li>
+          <li>مكتبة القناة والدليل في أي وقت</li>
+          <li>دعم مباشر مع الفريق</li>
+        </ul>
+      </div>
+      <div class="plan">
+        <h3>👥 باقة الفريق</h3>
+        <p>للمجموعات والمجتمعات بتنسيق خاص</p>
+      </div>
+    </div>
+    <div class="note" style="margin-top:18px">الدخول والفوائد الكاملة من داخل التطبيق — حمّله ثم تابع طريق التسجيل فيها.</div>
+  </section>
+
   <section id="library" style="margin-top:38px">
     <h2>مكتبة <span class="g">القناة</span></h2>
     <p class="lead">كل الوثائق تنفتح داخل التطبيق مباشرةً، وإليك عناوينها:</p>
@@ -141,7 +178,7 @@ footer b{color:var(--primary)}
   </section>
 </main>
 
-<footer>GT Group &copy; 2026 — <b>المهندس أبو فهد</b> وفريق القناة · نصّل فيكم عبر <b>تحميل التطبيق</b></footer>
+<footer>GT Group &copy; 2026 — <b>المهندس أبو فهد</b> وفريق القناة · تابعنا: <a href="https://t.me/gt_group" target="_blank" rel="noopener" style="color:var(--primary);font-weight:800">تيليجرام</a></footer>
 
 </body>
 </html>
