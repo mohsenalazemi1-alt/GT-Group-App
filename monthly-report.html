@@ -16,6 +16,21 @@
 .chapter-nav{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}
 .chapter-nav a{background:var(--surfaceAlt);border:1px solid var(--border);padding:8px 16px;border-radius:10px;color:var(--text);font-weight:600;font-size:.9rem;transition:all .15s}
 .chapter-nav a:hover{border-color:var(--primary);color:var(--primary)}</style>
+
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="GT Group">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#F7931A">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('service-worker.js');
+  });
+}
+</script>
 </head>
 <body>
 <nav>
