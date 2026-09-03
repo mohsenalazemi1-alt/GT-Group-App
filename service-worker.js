@@ -1,4 +1,4 @@
-const CACHE = "gtgroup-v1";
+const CACHE = "gtgroup-v2";
 const CORE = [
   "./",
   "index.html",
@@ -14,6 +14,7 @@ const CORE = [
   "book.html",
   "style.css",
   "reports.js",
+  "supabase-config.js",
   "manifest.json"
 ];
 

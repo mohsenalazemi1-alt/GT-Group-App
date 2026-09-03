@@ -1,12 +1,12 @@
-﻿const SUPABASE_URL='https://ovxzubciqelsxqjrdght.supabase.co';
-const SUPABASE_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im92eHp1YmNpcWVsc3hxanJkZ2h0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4ODI1NTgwNSwiZXhwIjoyMTAzODMxODA1fQ.WBeshyqZ_EAvP-3fUUGbA3CHsUDVSMFzwlkeU68TFWI';
-let allTrades=[];
+﻿let allTrades=[];
+
+const KEY=(typeof SUPABASE_PUBLIC_ANON_KEY!=='undefined'?SUPABASE_PUBLIC_ANON_KEY:'');
 
 async function fetchData(){
   try{
     const ctrl=new AbortController();
     const tid=setTimeout(()=>ctrl.abort(),8000);
-    const res=await fetch(SUPABASE_URL+'/rest/v1/recommendations?select=*&order=published_at.desc&limit=200',{headers:{apikey:SUPABASE_KEY,Authorization:'Bearer '+SUPABASE_KEY},signal:ctrl.signal});
+    const res=await fetch(SUPABASE_URL+'/rest/v1/recommendations?select=*&order=published_at.desc&limit=200',{headers:{apikey:KEY,Authorization:'Bearer '+KEY},signal:ctrl.signal});
     clearTimeout(tid);
     return await res.json();
   }catch(e){return [];}
